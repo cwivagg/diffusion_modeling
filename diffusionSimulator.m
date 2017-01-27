@@ -1,10 +1,17 @@
-function [ trajectories ] = diffusionSimulator( D );
+function [ trajectories ] = diffusionSimulator( D )
 
 % This script simulates the diffusion of protein molecules on the membrane
 % of a bacterial cell.
 
 % The cell is a sphere divided in two with a cylinder interposed between; the
 % cylinder's axis runs parallel to the x axis.
+
+% The heart of the function is the sub-function randPointOnCircle, which
+% simulates the actual diffusion from one point to another, treating it as
+% movement at a random angle for a normally distributed distance determined
+% by D.
+
+addpath('./diffusionHelperFunctions');
 
 %D = 10;
 dt = 0.000022;
